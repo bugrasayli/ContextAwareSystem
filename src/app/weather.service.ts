@@ -8,7 +8,7 @@ import { Temperature } from './temperature';
 })
 export class WeatherService {
 
-  url: string = "http://api.openweathermap.org/data/2.5/weather?id=598316&appid=4d50e5df37805425aaa5a12745eb2d3d";
+  url: string = "";
   constructor(private http: HttpClient) {
   }
   get() : Observable<Temperature>
