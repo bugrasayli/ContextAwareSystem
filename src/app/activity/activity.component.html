@@ -1,0 +1,43 @@
+<div style="display: inline-block; width: 100%;">
+  <div class="card" style="width: 30%; height: 130px; display: inline-block; vertical-align: top;" *ngIf="temperature">
+    <div class="card-body">
+      <h5 class="card-title">Weather</h5>
+      <h5 class="card-subtitle mb-2 text-muted">
+        {{temperature.weather[0].description}} || {{degree-273 |number}}°C
+        <img src="http://openweathermap.org/img/wn/{{temperature.weather[0].icon}}@2x.png" alt="">
+      </h5>
+    </div>
+  </div>
+  <div class="card" style="width: 30%;margin-left:40% ;height: 130px; display: inline-block; float: right;" *ngIf="temperature">
+    <div class="card-body">
+      <h5 class="card-title">Time</h5>
+      <h5 class="card-subtitle mb-2 text-muted">
+        {{now.getDate()}}/{{now.getMonth() + 1}}/{{now.getFullYear()}}
+      </h5>
+      <h5 class="card-subtitle mb-2 text-muted">
+        0{{now.getHours()}}:{{now.getMinutes()}}:{{now.getSeconds()}}
+        <img  alt="">
+      </h5>
+    </div>
+  </div>
+</div>
+<table class="table table-striped" *ngIf="Activities">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Place</th>
+      <th scope="col">Time</th>
+      <th scope="col">Type</th>
+      <th scope="col">Select</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let activity of Activities">
+      <td>{{activity.name}}</td>
+      <td>{{activity.place}}</td>
+      <td>{{activity.time}}</td>
+      <td>{{activity.type}}</td>
+      <button type="button" class="btn btn-secondary">Select</button>
+    </tr>
+  </tbody>
+</table>

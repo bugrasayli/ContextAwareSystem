@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Hotel } from './hotel';
+import { Activity } from './activity';
+import { AgmCoreModule } from '@agm/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HolidayScenario';
+
+  constructor() {
+    
+
+
+  }
 }

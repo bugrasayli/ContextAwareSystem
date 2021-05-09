@@ -1,0 +1,20 @@
+
+    <table class="table table-striped" *ngIf="Hotels">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Information</th>
+          <th scope="col">Price</th>
+          <th scope="col">Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hotel of Hotels">
+          <td>{{hotel.name}}</td>
+          <td>{{hotel.moreInfo}}</td>
+          <td>{{hotel.price}}</td>
+          <button type="button" class="btn btn-secondary">Select</button>
+        </tr>
+      </tbody>
+    </table>
+  

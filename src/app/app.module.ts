@@ -1,18 +1,33 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
+import { AdressComponent } from './adress/adress.component';
+import { RegisterComponent } from './register/register.component';
+import { ActivityComponent } from './activity/activity.component';
+import { HotelComponent } from './hotel/hotel.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdressComponent,
+    RegisterComponent,
+    ActivityComponent,
+    HotelComponent,
   ],
   imports: [
+    AppRoutingModule,HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBjTQxgx_0mVr9vGTzJT3zSe_BToMTc_hs'
+    })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
